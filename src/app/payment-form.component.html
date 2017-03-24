@@ -1,3 +1,41 @@
 <div class="container">
-FORM
+  <div class="container">
+    <h1>Payment Form</h1>
+    <form>
+
+      <div class="form-group">
+        <label for="holderName">Your Name</label>
+        <input type="text"  class="form-control" id="holderName"
+               [(ngModel)]="model.holderName" name="holderName">
+      </div>
+
+      <div class="form-group">
+        <label for="cc">That Long Number</label>
+        <input type="text" class="form-control" id="cc"
+               required
+               [(ngModel)]="model.cc" name="cc">
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">The Number On The Back</label>
+        <input type="text"  class="form-control" id="cvv"
+               [(ngModel)]="model.cvv" name="cvv">
+      </div>
+
+      <div class="form-group">
+        <label for="expiryMonth">Expiry Month</label>
+        <input type="text"  class="form-control" id="expiryMonth"
+               [(ngModel)]="model.expiryMonth" name="expiryMonth">
+      </div>
+
+      <div class="form-group">
+        <label for="expiryYear">Expiry Year</label>
+        <input type="text"  class="form-control" id="expiryYear"
+               [(ngModel)]="model.expiryYear" name="expiryYear">
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+  </div>
 </div>
