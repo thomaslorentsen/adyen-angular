@@ -1,37 +1,67 @@
 <div class="container">
   <div class="container">
     <h1>Payment Form</h1>
-    <form>
+    <form id="adyen-encrypted-form" (ngSubmit)="onSubmit()" #PaymentForm="ngForm">
+
 
       <div class="form-group">
-        <label for="holderName">Your Name</label>
-        <input type="text"  class="form-control" id="holderName"
-               [(ngModel)]="model.holderName" name="holderName">
+        <label for="product">Description</label>
+        <input type="text" class="form-control" id="product"
+               required
+               [(ngModel)]="product.description" name="product"
+               autocomplete="off" data-encrypted-name="number" size="20">
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" id="amount"
+               required
+               [(ngModel)]="product.amount" name="amount"
+               autocomplete="off" data-encrypted-name="number" size="20">
       </div>
 
       <div class="form-group">
         <label for="cc">That Long Number</label>
         <input type="text" class="form-control" id="cc"
                required
-               [(ngModel)]="model.cc" name="cc">
+               [(ngModel)]="model.cc" name="cc"
+               autocomplete="off" data-encrypted-name="number" size="20">
       </div>
 
       <div class="form-group">
-        <label for="cvv">The Number On The Back</label>
-        <input type="text"  class="form-control" id="cvv"
-               [(ngModel)]="model.cvv" name="cvv">
+        <label for="holderName">Your Name</label>
+        <input type="text"  class="form-control" id="holderName"
+               [(ngModel)]="model.holderName" name="holderName"
+               autocomplete="off" data-encrypted-name="holderName" size="20"
+        >
       </div>
 
       <div class="form-group">
         <label for="expiryMonth">Expiry Month</label>
         <input type="text"  class="form-control" id="expiryMonth"
-               [(ngModel)]="model.expiryMonth" name="expiryMonth">
+               [(ngModel)]="model.expiryMonth" name="expiryMonth"
+               data-encrypted-name="expiryMonth" size="2" maxlength="2">
       </div>
 
       <div class="form-group">
         <label for="expiryYear">Expiry Year</label>
         <input type="text"  class="form-control" id="expiryYear"
-               [(ngModel)]="model.expiryYear" name="expiryYear">
+               [(ngModel)]="model.expiryYear" name="expiryYear"
+               data-encrypted-name="expiryYear" size="4" maxlength="4">
+      </div>
+
+      <div class="form-group">
+        <label for="cvv">The Number On The Back</label>
+        <input type="text"  class="form-control" id="cvv"
+               [(ngModel)]="model.cvc" name="cvc"
+               autocomplete="off" data-encrypted-name="cvc" size="4" maxlength="4">
+      </div>
+
+      <div class="form-group">
+        <label for="akey">Key</label>
+        <input type="text"  class="form-control" id="akey"
+               [(ngModel)]="model.akey" name="akey"
+               autocomplete="off">
       </div>
 
       <button type="submit" class="btn btn-success">Submit</button>

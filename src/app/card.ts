@@ -2,10 +2,12 @@ export class Card {
 
   constructor(
     public holderName: string,
-    public cc: number,
-    public cvv: number,
-    public expiryMonth: number,
-    public expiryYear: number
+    public cc: string,
+    public cvc: string,
+    public expiryMonth: string,
+    public expiryYear: string,
+    public generationTime: string,
+    public akey: string
   ) {  }
 
 }
